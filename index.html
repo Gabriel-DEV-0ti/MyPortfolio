@@ -1,0 +1,1744 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel | Engenheiro de Dados e IA</title>
+
+    <!-- Fontes do Google: Inter para texto normal e Fira Code para código/tecnologia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome para os ícones (LinkedIn, GitHub, Email, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           VARIÁVEIS DE TEMA (Design System)
+           ========================================================================== */
+        :root {
+            /* Paleta Dark Theme */
+            --bg-body: #0f172a;
+            /* Fundo principal escuro */
+            --bg-surface: #1e293b;
+            /* Fundo de painéis e cards */
+            --bg-surface-light: #334155;
+            /* Bordas e hovers */
+
+            /* Cores Neon / Destaque */
+            --primary: #0ea5e9;
+            /* Azul base */
+            --primary-light: #38bdf8;
+            /* Azul neon brilhante */
+            --accent: #8b5cf6;
+            /* Roxo secundário */
+
+            /* Textos */
+            --text-main: #f8fafc;
+            /* Texto principal claro */
+            --text-muted: #94a3b8;
+            /* Texto secundário acinzentado */
+
+            /* Efeitos Glassmorphism */
+            --glass-bg: rgba(30, 41, 59, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.05);
+
+            /* Tipografia */
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'Fira Code', monospace;
+
+            /* Layout */
+            --max-width: 1100px;
+            --section-padding: 5rem 1rem;
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--bg-surface-light);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, var(--primary-light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Botões Globais */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--text-muted);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
+           NAVEGAÇÃO (NAV)
+           ========================================================================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--primary-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* ==========================================================================
+           SEÇÃO HERO (CABEÇALHO)
+           ========================================================================== */
+        #hero {
+            padding: 10rem 1rem 5rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-greeting {
+            font-family: var(--font-mono);
+            color: var(--primary-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        /* NOVOS ÍCONES SOCIAIS NO HERO */
+        .hero-socials {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--bg-surface-light);
+            color: var(--text-main);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-socials a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .hero-socials a.whatsapp-btn::before {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+        }
+
+        .hero-socials a.linkedin-btn::before {
+            background: linear-gradient(45deg, #0077b5, #00a0dc);
+        }
+
+        .hero-socials a i {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-socials a:hover {
+            border-color: transparent;
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .hero-socials a.whatsapp-btn:hover {
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+        }
+
+        .hero-socials a.linkedin-btn:hover {
+            box-shadow: 0 0 15px rgba(0, 119, 181, 0.5);
+        }
+
+        .hero-socials a:hover::before {
+            opacity: 1;
+        }
+
+        .hero-socials a:hover i {
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Botões de Contato Especiais */
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20bd5a;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-linkedin {
+            background-color: #0077b5;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 119, 181, 0.35);
+        }
+
+        .btn-linkedin:hover {
+            background-color: #005f93;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 119, 181, 0.5);
+        }
+
+        .btn-github {
+            background-color: #24292e;
+            color: #ffffff;
+            border: 1px solid var(--bg-surface-light);
+        }
+
+        .btn-github:hover {
+            background-color: #1b1f23;
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp-outline {
+            background-color: transparent;
+            border: 1px solid #25D366;
+            color: #25D366;
+        }
+
+        .btn-whatsapp-outline:hover {
+            background-color: rgba(37, 211, 102, 0.12);
+            border-color: #25D366;
+            color: #4ade80;
+            transform: translateY(-2px);
+        }
+
+        /* Espaço para a foto com Upload Interativo e Banco de Dados */
+        .hero-image-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .hero-image-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.3;
+            animation: pulse 4s infinite alternate;
+            transition: all 0.3s ease;
+        }
+
+        .hero-image-container:hover .hero-image-glow,
+        .hero-image-container.dragover .hero-image-glow {
+            opacity: 0.55;
+            filter: blur(45px);
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.2;
+                transform: scale(0.95);
+            }
+
+            100% {
+                opacity: 0.4;
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid var(--bg-surface-light);
+            overflow: hidden;
+            background-color: var(--bg-surface);
+            z-index: 2;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero-image.dragover {
+            border-color: var(--primary-light);
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease, filter 0.3s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.05);
+            filter: brightness(0.85);
+        }
+
+        /* Overlay para ação de upload sobre a foto */
+        .hero-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(4px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 5;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            pointer-events: none;
+        }
+
+        .hero-image:hover .hero-image-overlay,
+        .hero-image.dragover .hero-image-overlay {
+            opacity: 1;
+        }
+
+        .hero-image-overlay i {
+            font-size: 2.2rem;
+            color: var(--primary-light);
+            animation: bounceSmall 2s infinite;
+        }
+
+        @keyframes bounceSmall {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Botão Flutuante de Upload */
+        .hero-upload-badge {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border: 3px solid var(--bg-body);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hero-upload-badge:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+        }
+
+        /* Controles do Avatar (Status DB e Reset) */
+        .avatar-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            z-index: 3;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .backend-status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(30, 41, 59, 0.85);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 0.35rem 0.85rem;
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .backend-status-pill .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #22c55e;
+            box-shadow: 0 0 8px #22c55e;
+            animation: pulseDot 2s infinite;
+        }
+
+        .backend-status-pill.offline .status-dot {
+            background-color: #f59e0b;
+            box-shadow: 0 0 8px #f59e0b;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .btn-avatar-reset {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #f87171;
+            border-radius: 20px;
+            padding: 0.35rem 0.85rem;
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-avatar-reset:hover {
+            background: rgba(239, 68, 68, 0.25);
+            border-color: #ef4444;
+            color: #fee2e2;
+            transform: translateY(-1px);
+        }
+
+        /* ==========================================================================
+           SOBRE MIM E PROJETOS
+           ========================================================================== */
+        .section-bg-darker {
+            background-color: #0b1120;
+            padding: var(--section-padding);
+            border-top: 1px solid var(--bg-surface);
+            border-bottom: 1px solid var(--bg-surface);
+        }
+
+        .about-text {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 800px;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text strong {
+            color: var(--primary-light);
+        }
+
+        #projetos {
+            padding: var(--section-padding);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(14, 165, 233, 0.4);
+        }
+
+        .project-img-placeholder {
+            height: 180px;
+            background-color: var(--bg-surface-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .project-card:hover .project-img-placeholder {
+            color: var(--primary-light);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            background-color: rgba(14, 165, 233, 0.1);
+            color: var(--primary-light);
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-link {
+            color: var(--primary-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================================================
+           TRAJETÓRIA E CONTATO
+           ========================================================================== */
+        .timeline-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .timeline-column h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .timeline-column h3 i {
+            color: var(--primary-light);
+        }
+
+        .timeline {
+            border-left: 2px solid var(--bg-surface-light);
+            padding-left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.85rem;
+            top: 0.2rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--bg-body);
+            border: 2px solid var(--primary-light);
+        }
+
+        .timeline-item.active::before {
+            background-color: var(--primary-light);
+            box-shadow: 0 0 10px var(--primary-light);
+        }
+
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--primary-light);
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .timeline-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        #contato {
+            padding: var(--section-padding);
+        }
+
+        /* Grid de Canais de Contato Direto (LinkedIn e WhatsApp) */
+        .contact-channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .channel-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .channel-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: transparent;
+            transition: background 0.3s ease;
+        }
+
+        .channel-card.linkedin::before { background: #0077b5; }
+        .channel-card.whatsapp::before { background: #25D366; }
+        .channel-card.github::before { background: var(--primary-light); }
+
+        .channel-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .channel-card.linkedin:hover { box-shadow: 0 10px 30px rgba(0, 119, 181, 0.25); }
+        .channel-card.whatsapp:hover { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.25); }
+        .channel-card.github:hover { box-shadow: 0 10px 30px rgba(14, 165, 233, 0.25); }
+
+        .channel-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background-color: var(--bg-body);
+            border: 1px solid var(--bg-surface-light);
+            transition: transform 0.3s ease;
+        }
+
+        .channel-card:hover .channel-icon {
+            transform: scale(1.1);
+        }
+
+        .channel-card.linkedin .channel-icon { color: #0077b5; }
+        .channel-card.whatsapp .channel-icon { color: #25D366; }
+        .channel-card.github .channel-icon { color: #f8fafc; }
+
+        .channel-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .channel-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .channel-card .btn {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card-header {
+            margin-bottom: 2rem;
+        }
+
+        .contact-card-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card-header h3 i {
+            color: var(--primary-light);
+        }
+
+        .contact-card-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .form-input {
+            width: 100%;
+            background-color: var(--bg-body);
+            border: 1px solid var(--bg-surface-light);
+            border-radius: 8px;
+            padding: 1rem;
+            color: var(--text-main);
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-buttons-row {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .form-buttons-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .success-details-card {
+            display: none;
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .success-details-card h4 {
+            color: #4ade80;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .success-details-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .success-actions {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        /* Sistema de Toasts Flutuantes */
+        .toast-container {
+            position: fixed;
+            top: 90px;
+            right: 25px;
+            z-index: 3000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            pointer-events: none;
+        }
+
+        .toast {
+            pointer-events: auto;
+            background: var(--bg-surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 1rem 1.4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            min-width: 320px;
+            max-width: 440px;
+            backdrop-filter: blur(12px);
+            transform: translateX(120%);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+
+        .toast-content {
+            flex-grow: 1;
+        }
+
+        .toast-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .toast-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .toast-success {
+            border-left: 4px solid #22c55e;
+        }
+        .toast-success .toast-icon { color: #22c55e; }
+
+        .toast-error {
+            border-left: 4px solid #ef4444;
+        }
+        .toast-error .toast-icon { color: #ef4444; }
+
+        .toast-info {
+            border-left: 4px solid var(--primary-light);
+        }
+        .toast-info .toast-icon { color: var(--primary-light); }
+
+        /* ==========================================================================
+           MODAL E RESPONSIVIDADE
+           ========================================================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--bg-surface);
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            border-radius: 12px;
+            border: 1px solid var(--bg-surface-light);
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--bg-surface-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--bg-surface-light);
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-light);
+            border-bottom-color: var(--primary-light);
+        }
+
+        .modal-body {
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                order: 2;
+            }
+
+            .hero-socials {
+                justify-content: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image-container {
+                order: 1;
+                width: 250px;
+                height: 250px;
+            }
+
+            .timeline-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo"><span>&lt;</span>Gabriel<span>/&gt;</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#trajetoria">Trajetória</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SEÇÃO HERO COM ÍCONES SOCIAIS -->
+    <header id="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-greeting">Olá, Mundo! Eu sou</span>
+                <h1 class="hero-title">Gabriel</h1>
+                <h2 class="hero-subtitle gradient-text">Engenheiro de Dados & IA</h2>
+                <p class="hero-description">
+                    Especialista em transformar dados brutos em ativos estratégicos. Construo pipelines escaláveis e
+                    integro sistemas inteligentes.
+                </p>
+
+                <!-- ÍCONES SOCIAIS (LinkedIn, WhatsApp e GitHub) -->
+                <div class="hero-socials">
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="linkedin-btn" title="LinkedIn Profissional">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Gabriel!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" class="whatsapp-btn" title="Conversar no WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#projetos" class="btn btn-primary"><i class="fas fa-rocket"></i> Ver Projetos</a>
+                    <a href="#contato" class="btn btn-outline"><i class="fas fa-envelope"></i> Mensagem</a>
+                </div>
+            </div>
+
+            <!-- FOTO DE PERFIL COM UPLOAD DIRETO PARA O BANCO DE DADOS -->
+            <div class="hero-image-wrapper">
+                <div class="hero-image-container" id="heroImageContainer" title="Clique ou arraste uma foto para salvar no banco de dados">
+                    <div class="hero-image-glow"></div>
+                    <div class="hero-image" id="heroImageDropzone">
+                        <img id="profileImage" src="assets/default-avatar.svg" alt="Foto Profissional">
+                        <div class="hero-image-overlay">
+                            <i class="fas fa-camera"></i>
+                            <span>Alterar Foto</span>
+                        </div>
+                    </div>
+                    <button class="hero-upload-badge" id="btnUploadTrigger" type="button" title="Fazer upload de nova foto">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                    <!-- Input oculto para seleção de arquivos -->
+                    <input type="file" id="avatarFileInput" accept="image/png, image/jpeg, image/webp" style="display: none;">
+                </div>
+                <!-- Controles e status do banco de dados -->
+                <div class="avatar-controls">
+                    <div class="backend-status-pill" id="backendStatusPill">
+                        <span class="status-dot"></span>
+                        <span id="backendStatusText">Verificando Backend Java...</span>
+                    </div>
+                    <button id="btnResetAvatar" class="btn-avatar-reset" style="display: none;" title="Restaurar avatar padrão">
+                        <i class="fas fa-trash-alt"></i> Remover Foto
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO SOBRE MIM -->
+    <section id="sobre" class="section-bg-darker">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-text">
+                <p>
+                    Sou um <strong>Engenheiro de Dados e Inteligência Artificial</strong> dedicado. Minha jornada
+                    começou nas trincheiras de bancos relacionais tradicionais, dominando <strong>SQL, Oracle e SQL
+                        Server</strong>.
+                </p>
+                <p>
+                    Hoje, construo a ponte entre a engenharia tradicional e a ciência de dados moderna, garantindo que
+                    modelos preditivos e dashboards analíticos sejam alimentados por uma infraestrutura confiável e
+                    escalável.
+                </p>
+                <br>
+                <!-- BOTÃO PARA BAIXAR CURRÍCULO -->
+                <a href="curriculo-fake.pdf" download="curriculo-fake.pdf" class="btn btn-primary">
+                    <i class="fas fa-file-pdf"></i> Baixar Meu Currículo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE PROJETOS -->
+    <section id="projetos">
+        <div class="container">
+            <h2 class="section-title">Projetos em Destaque</h2>
+            <div class="projects-grid">
+
+                <div class="project-card" onclick="abrirModal('Projeto: Pipeline em Tempo Real')">
+                    <div class="project-img-placeholder"><i class="fas fa-network-wired"></i></div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Spark</span> <span class="tag">Kafka</span>
+                        </div>
+                        <h3 class="project-title">Pipeline de Telemetria</h3>
+                        <p class="project-desc">Arquitetura para processar milhões de eventos diários.</p>
+                        <span class="project-link">Ver Detalhes <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="abrirModal('Projeto: IA para Manutenção')">
+                    <div class="project-img-placeholder"><i class="fas fa-brain"></i></div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag" style="color:#c4b5fd;">Machine Learning</span>
+                        </div>
+                        <h3 class="project-title">IA Preditiva</h3>
+                        <p class="project-desc">Modelos para prever falhas em hardware, reduzindo paradas em 35%.</p>
+                        <span class="project-link">Ver Detalhes <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAJETÓRIA (Experiência e Educação) -->
+    <section id="trajetoria" class="section-bg-darker">
+        <div class="container timeline-container">
+            <div class="timeline-column">
+                <h3><i class="fas fa-briefcase"></i> Experiência Profissional</h3>
+                <div class="timeline">
+                    <div class="timeline-item active">
+                        <span class="timeline-date">Atual</span>
+                        <h4 class="timeline-title">Engenheiro de Dados & IA</h4>
+                        <p class="timeline-desc">Foco no desenvolvimento de pipelines ETL/ELT complexos e integração de
+                            APIs de IA.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">2022 - 2025</span>
+                        <h4 class="timeline-title">Especialista de Banco de Dados</h4>
+                        <p class="timeline-desc">Manutenção e tuning de consultas em clusters SQL Server e Oracle.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-column">
+                <h3><i class="fas fa-graduation-cap"></i> Educação & Certificações</h3>
+                <div class="timeline">
+                    <div class="timeline-item active">
+                        <span class="timeline-date">Em andamento</span>
+                        <h4 class="timeline-title">Pós-Graduação em Big Data</h4>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Certificações</span>
+                        <h4 class="timeline-title">Licenças Oficiais</h4>
+                        <ul style="color: var(--text-muted); font-size: 0.9rem; padding-left: 1rem;">
+                            <li>Microsoft Certified: Azure Data Fundamentals</li>
+                            <li>Oracle Database SQL Certified</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTATO E OPORTUNIDADES -->
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Contato & Conexão Direta</h2>
+
+            <!-- CARDS DE CONTATO DIRETO (LinkedIn e WhatsApp) -->
+            <div class="contact-channels-grid">
+                <div class="channel-card linkedin">
+                    <div class="channel-icon"><i class="fab fa-linkedin-in"></i></div>
+                    <h3 class="channel-title">LinkedIn</h3>
+                    <p class="channel-desc">Acesse meu perfil profissional, veja recomendações, projetos e acompanhe publicações sobre Engenharia de Dados & IA.</p>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin">
+                        <i class="fab fa-linkedin-in"></i> Conectar no LinkedIn
+                    </a>
+                </div>
+
+                <div class="channel-card whatsapp">
+                    <div class="channel-icon"><i class="fab fa-whatsapp"></i></div>
+                    <h3 class="channel-title">WhatsApp Direto</h3>
+                    <p class="channel-desc">Canal imediato para propostas, entrevistas e bate-papo técnico sem precisar abrir abas de e-mail.</p>
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Gabriel!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE PROJETOS -->
+    <div class="modal-overlay" id="modalProjeto">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitulo" style="font-size: 1.5rem; margin: 0;">Título</h3>
+                <button class="modal-close" onclick="fecharModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-btn active" onclick="trocarAba(event, 'aba-modelagem')">Modelagem de Dados</button>
+                <button class="tab-btn" onclick="trocarAba(event, 'aba-docs')">Documentação</button>
+            </div>
+            <div class="modal-body">
+                <div id="aba-modelagem" class="tab-content active">
+                    <h4 style="color: var(--primary-light);">Arquitetura Snowflake</h4>
+                    <p style="color: var(--text-muted); margin-top:1rem;">Detalhes da estrutura desenvolvida para o
+                        pipeline...</p>
+                </div>
+                <div id="aba-docs" class="tab-content">
+                    <h4 style="color: var(--primary-light);">Trechos de Código</h4>
+                    <pre
+                        style="background: #000; color: #4ade80; padding: 1rem; border-radius: 8px; margin-top:1rem;"><code>df.na.fill(0).write.format("delta").save()</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTAINER DE TOASTS FLUTUANTES -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- SCRIPTS -->
+    <script>
+        /* ==========================================================================
+           CONFIGURAÇÕES DA API JAVA E CONSTANTES
+           ========================================================================== */
+        const API_BASE_URL = 'http://localhost:8080';
+        const WHATSAPP_PHONE = '5511999999999'; // Número configurável para contato
+        const DEFAULT_AVATAR = 'assets/default-avatar.svg';
+
+        /* ==========================================================================
+           SISTEMA DE NOTIFICAÇÕES (TOASTS MODERNOS)
+           ========================================================================== */
+        function showToast(type, title, message, duration = 4500) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+
+            let iconHtml = '<i class="fas fa-info-circle toast-icon"></i>';
+            if (type === 'success') iconHtml = '<i class="fas fa-check-circle toast-icon"></i>';
+            if (type === 'error') iconHtml = '<i class="fas fa-exclamation-triangle toast-icon"></i>';
+
+            toast.innerHTML = `
+                ${iconHtml}
+                <div class="toast-content">
+                    <div class="toast-title">${title}</div>
+                    <div class="toast-desc">${message}</div>
+                </div>
+            `;
+
+            container.appendChild(toast);
+
+            // Animação de entrada suave
+            requestAnimationFrame(() => {
+                toast.classList.add('show');
+            });
+
+            // Remover após duração
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, duration);
+        }
+
+        /* ==========================================================================
+           LÓGICA DO MODAL DE PROJETOS
+           ========================================================================== */
+        const modal = document.getElementById('modalProjeto');
+        const modalTitle = document.getElementById('modalTitulo');
+
+        function abrirModal(titulo) {
+            modalTitle.innerText = titulo;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.querySelector('.tab-btn').click();
+        }
+
+        function fecharModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) fecharModal();
+        });
+
+        function trocarAba(evento, idAba) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(aba => aba.classList.remove('active'));
+
+            evento.currentTarget.classList.add('active');
+            document.getElementById(idAba).classList.add('active');
+        }
+
+        /* ==========================================================================
+           UPLOAD E SINCRONIZAÇÃO DA FOTO DE PERFIL COM O BACKEND JAVA + BANCO H2
+           ========================================================================== */
+        const profileImage = document.getElementById('profileImage');
+        const avatarFileInput = document.getElementById('avatarFileInput');
+        const heroImageContainer = document.getElementById('heroImageContainer');
+        const heroImageDropzone = document.getElementById('heroImageDropzone');
+        const btnUploadTrigger = document.getElementById('btnUploadTrigger');
+        const btnResetAvatar = document.getElementById('btnResetAvatar');
+        const backendStatusPill = document.getElementById('backendStatusPill');
+        const backendStatusText = document.getElementById('backendStatusText');
+
+        // Abrir seletor de arquivo ao clicar no container ou no botão
+        btnUploadTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            avatarFileInput.click();
+        });
+
+        heroImageContainer.addEventListener('click', () => {
+            avatarFileInput.click();
+        });
+
+        // Eventos de Drag and Drop na foto
+        ['dragenter', 'dragover'].forEach(eventName => {
+            heroImageContainer.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                heroImageContainer.classList.add('dragover');
+                heroImageDropzone.classList.add('dragover');
+            });
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            heroImageContainer.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                heroImageContainer.classList.remove('dragover');
+                heroImageDropzone.classList.remove('dragover');
+            });
+        });
+
+        heroImageContainer.addEventListener('drop', (e) => {
+            const files = e.dataTransfer.files;
+            if (files && files.length > 0) {
+                processAndUploadAvatar(files[0]);
+            }
+        });
+
+        avatarFileInput.addEventListener('change', (e) => {
+            if (e.target.files && e.target.files.length > 0) {
+                processAndUploadAvatar(e.target.files[0]);
+            }
+        });
+
+        /**
+         * Valida no cliente e envia a foto para a API REST Java
+         */
+        async function processAndUploadAvatar(file) {
+            // Validação de tipo
+            const validTypes = ['image/jpeg', 'image/png', 'image/webp'];
+            if (!validTypes.includes(file.type)) {
+                showToast('error', 'Formato Inválido', 'Selecione uma imagem nos formatos PNG, JPEG ou WEBP.');
+                return;
+            }
+
+            // Validação de tamanho (máximo 5MB)
+            const maxSize = 5 * 1024 * 1024;
+            if (file.size > maxSize) {
+                showToast('error', 'Arquivo Muito Grande', 'A imagem deve ter no máximo 5 MB.');
+                return;
+            }
+
+            // Preview instantâneo
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                profileImage.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+
+            // Monta FormData com o arquivo
+            const formData = new FormData();
+            formData.append('file', file);
+
+            showToast('info', 'Processando...', 'Enviando imagem para o banco de dados H2 via API Java.');
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/profile/image`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    showToast('success', 'Foto Atualizada!', 'Sua imagem foi armazenada com sucesso no banco de dados!');
+                    // Atualiza a imagem com timestamp para evitar cache do browser
+                    profileImage.src = `${API_BASE_URL}/api/profile/image?t=${Date.now()}`;
+                    btnResetAvatar.style.display = 'inline-flex';
+                    localStorage.setItem('has_custom_avatar', 'true');
+                } else {
+                    const errorMsg = data.message || 'Falha ao salvar a imagem no backend.';
+                    showToast('error', 'Erro no Servidor', errorMsg);
+                }
+            } catch (err) {
+                console.warn('Backend Java offline ou erro na requisição:', err);
+                showToast('error', 'Erro de Conexão', 'Não foi possível conectar ao backend Java (porta 8080). A foto foi pré-visualizada localmente.');
+                btnResetAvatar.style.display = 'inline-flex';
+            } finally {
+                avatarFileInput.value = ''; // Reseta input
+            }
+        }
+
+        /**
+         * Remove a foto personalizada e restaura o avatar padrão
+         */
+        btnResetAvatar.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/profile/image`, {
+                    method: 'DELETE'
+                });
+                if (response.ok) {
+                    showToast('info', 'Foto Restaurada', 'A imagem customizada foi removida do banco de dados.');
+                }
+            } catch (err) {
+                console.warn('Erro ao deletar foto no backend:', err);
+            }
+            profileImage.src = DEFAULT_AVATAR;
+            btnResetAvatar.style.display = 'none';
+            localStorage.removeItem('has_custom_avatar');
+        });
+
+        /**
+         * Verifica o status do Backend Java e carrega a foto ativa no banco
+         */
+        async function initBackendConnection() {
+            try {
+                const healthRes = await fetch(`${API_BASE_URL}/api/health`);
+                if (healthRes.ok) {
+                    backendStatusPill.classList.remove('offline');
+                    backendStatusText.innerText = 'Java & H2 DB Conectado';
+
+                    // Busca metadados da imagem de perfil
+                    const metaRes = await fetch(`${API_BASE_URL}/api/profile/image/metadata`);
+                    if (metaRes.ok) {
+                        const metaData = await metaRes.json();
+                        if (metaData.success && metaData.data) {
+                            profileImage.src = `${API_BASE_URL}/api/profile/image?t=${Date.now()}`;
+                            btnResetAvatar.style.display = 'inline-flex';
+                            return;
+                        }
+                    }
+                }
+            } catch (err) {
+                console.log('Backend não disponível no momento:', err.message);
+                backendStatusPill.classList.add('offline');
+                backendStatusText.innerText = 'Backend Java Offline (Modo Local)';
+            }
+
+            profileImage.src = DEFAULT_AVATAR;
+        }
+
+        // Inicializa ao carregar a página
+        initBackendConnection();
+
+        /* ==========================================================================
+           LÓGICA DO FORMULÁRIO DE CONTATO (SE PRESENTE)
+           ========================================================================== */
+        const formRecrutador = document.getElementById('formRecrutador');
+        const btnEnviar = document.getElementById('btnEnviar');
+        const btnEnviarWhatsAppDirect = document.getElementById('btnEnviarWhatsAppDirect');
+        const msgSucessoCard = document.getElementById('msgSucessoCard');
+        const msgSucessoTexto = document.getElementById('msgSucessoTexto');
+        const btnContinuarWhatsApp = document.getElementById('btnContinuarWhatsApp');
+
+        if (btnEnviarWhatsAppDirect) {
+            btnEnviarWhatsAppDirect.addEventListener('click', () => {
+                const nome = document.getElementById('nome')?.value.trim() || 'Recrutador';
+                const empresa = document.getElementById('empresa')?.value.trim() || 'Empresa';
+                const mensagem = document.getElementById('mensagem')?.value.trim() || 'Gostaria de conversar sobre oportunidades!';
+
+                const zapTexto = `*Olá Gabriel!*%0A*Nome:* ${encodeURIComponent(nome)}%0A*Empresa:* ${encodeURIComponent(empresa)}%0A*Mensagem:* ${encodeURIComponent(mensagem)}`;
+                window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${zapTexto}`, '_blank');
+            });
+        }
+
+        if (formRecrutador && btnEnviar) {
+            formRecrutador.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const nome = document.getElementById('nome').value.trim();
+                const empresa = document.getElementById('empresa').value.trim();
+                const mensagem = document.getElementById('mensagem').value.trim();
+
+                const txtOriginal = btnEnviar.innerHTML;
+                btnEnviar.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gravando no Banco...';
+                btnEnviar.disabled = true;
+
+                if (btnContinuarWhatsApp) {
+                    const zapTexto = `*Olá Gabriel!*%0A*Nome:* ${encodeURIComponent(nome)}%0A*Empresa:* ${encodeURIComponent(empresa)}%0A*Mensagem:* ${encodeURIComponent(mensagem)}`;
+                    btnContinuarWhatsApp.href = `https://wa.me/${WHATSAPP_PHONE}?text=${zapTexto}`;
+                }
+
+                try {
+                    const response = await fetch(`${API_BASE_URL}/api/contact`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: nome,
+                            company: empresa,
+                            message: mensagem
+                        })
+                    });
+
+                    const resData = await response.json();
+
+                    if (response.ok && resData.success) {
+                        if (msgSucessoTexto) msgSucessoTexto.innerHTML = `Mensagem de <strong>${nome}</strong> (${empresa}) registrada com ID #${resData.data.id} no banco de dados persistente H2 com segurança.`;
+                        if (msgSucessoCard) msgSucessoCard.style.display = 'block';
+                        showToast('success', 'Sucesso!', 'Mensagem salva com sucesso no banco de dados!');
+                        formRecrutador.reset();
+                    } else {
+                        const errMsg = resData.message || 'Erro ao processar mensagem.';
+                        showToast('error', 'Erro', errMsg);
+                        if (msgSucessoCard) msgSucessoCard.style.display = 'block';
+                    }
+                } catch (err) {
+                    console.warn('Backend indisponível:', err);
+                    if (msgSucessoTexto) msgSucessoTexto.innerText = 'Servidor local não respondeu, mas você pode enviar sua mensagem diretamente pelo WhatsApp abaixo!';
+                    if (msgSucessoCard) msgSucessoCard.style.display = 'block';
+                    showToast('info', 'WhatsApp Disponível', 'Você pode concluir o contato via WhatsApp diretamente.');
+                } finally {
+                    btnEnviar.innerHTML = txtOriginal;
+                    btnEnviar.disabled = false;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

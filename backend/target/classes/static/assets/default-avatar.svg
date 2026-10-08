@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d0b5"/>
+      <stop offset="100%" stop-color="#e2b291"/>
+    </linearGradient>
+    <linearGradient id="suitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Fundo Circular com Borda Neon -->
+  <rect width="400" height="400" fill="url(#bgGrad)"/>
+  
+  <!-- Círculos de Dados / IA de Fundo -->
+  <circle cx="200" cy="200" r="190" stroke="url(#glowGrad)" stroke-width="2" fill="none" opacity="0.4" stroke-dasharray="10 8"/>
+  <circle cx="200" cy="200" r="160" stroke="#0ea5e9" stroke-width="1" fill="none" opacity="0.2"/>
+
+  <!-- Corpo / Jaqueta Tech -->
+  <g filter="url(#shadow)">
+    <path d="M 90 380 C 90 290, 140 260, 200 260 C 260 260, 310 290, 310 380 Z" fill="url(#suitGrad)"/>
+    <!-- Gola / Camisa Tech Neon -->
+    <path d="M 170 260 L 200 320 L 230 260 Z" fill="url(#shirtGrad)"/>
+    <path d="M 200 280 L 200 370" stroke="#38bdf8" stroke-width="2" opacity="0.6"/>
+  </g>
+
+  <!-- Pescoço -->
+  <rect x="180" y="220" width="40" height="50" rx="8" fill="url(#skinGrad)"/>
+
+  <!-- Cabeça e Rosto -->
+  <g filter="url(#shadow)">
+    <ellipse cx="200" cy="180" rx="65" ry="75" fill="url(#skinGrad)"/>
+    
+    <!-- Cabelo Moderno -->
+    <path d="M 135 170 C 135 110, 160 100, 200 100 C 240 100, 265 110, 265 170 C 255 140, 235 130, 200 130 C 165 130, 145 140, 135 170 Z" fill="#1e1b2e"/>
+    <path d="M 140 145 C 155 115, 185 105, 230 110 C 250 115, 260 130, 262 145 C 245 135, 220 130, 195 135 C 170 140, 150 142, 140 145 Z" fill="#2d2847"/>
+    
+    <!-- Barba Estilizada -->
+    <path d="M 155 195 C 160 245, 240 245, 245 195 C 245 220, 230 245, 200 245 C 170 245, 155 220, 155 195 Z" fill="#1e1b2e" opacity="0.7"/>
+
+    <!-- Olhos Tech e Sobrancelhas -->
+    <rect x="160" y="152" width="28" height="6" rx="3" fill="#1e1b2e"/>
+    <rect x="212" y="152" width="28" height="6" rx="3" fill="#1e1b2e"/>
+    
+    <circle cx="174" cy="172" r="5" fill="#0f172a"/>
+    <circle cx="226" cy="172" r="5" fill="#0f172a"/>
+    <circle cx="176" cy="170" r="1.5" fill="#38bdf8"/>
+    <circle cx="228" cy="170" r="1.5" fill="#38bdf8"/>
+
+    <!-- Nariz e Boca -->
+    <path d="M 200 170 L 196 190 L 204 190" stroke="#c98a65" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 185 210 Q 200 220 215 210" stroke="#a76848" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Óculos Modernos Estilo Dev/Tech -->
+  <g>
+    <rect x="156" y="162" width="36" height="24" rx="8" fill="rgba(14, 165, 233, 0.15)" stroke="#38bdf8" stroke-width="2.5"/>
+    <rect x="208" y="162" width="36" height="24" rx="8" fill="rgba(14, 165, 233, 0.15)" stroke="#38bdf8" stroke-width="2.5"/>
+    <line x1="192" y1="172" x2="208" y2="172" stroke="#38bdf8" stroke-width="2.5"/>
+    <!-- Reflexo nos óculos -->
+    <line x1="162" y1="166" x2="172" y2="166" stroke="#ffffff" stroke-width="2" opacity="0.7" stroke-linecap="round"/>
+    <line x1="214" y1="166" x2="224" y2="166" stroke="#ffffff" stroke-width="2" opacity="0.7" stroke-linecap="round"/>
+  </g>
+
+  <!-- Partículas / Conexões de Dados & IA ao redor -->
+  <circle cx="70" cy="120" r="4" fill="#38bdf8" opacity="0.8"/>
+  <circle cx="330" cy="140" r="5" fill="#8b5cf6" opacity="0.8"/>
+  <circle cx="80" cy="280" r="3" fill="#38bdf8" opacity="0.6"/>
+  <circle cx="320" cy="270" r="4" fill="#38bdf8" opacity="0.6"/>
+  <line x1="70" y1="120" x2="100" y2="150" stroke="#38bdf8" stroke-width="1" opacity="0.3"/>
+  <line x1="330" y1="140" x2="300" y2="170" stroke="#8b5cf6" stroke-width="1" opacity="0.3"/>
+</svg>
