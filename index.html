@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel | Engenheiro de Dados e IA</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fontes do Google: Inter para texto normal e Fira Code para código/tecnologia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para os ícones (LinkedIn, GitHub, Email, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo"><span>&lt;</span>Gabriel<span>/&gt;</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#trajetoria">Trajetória</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SEÇÃO HERO COM ÍCONES SOCIAIS -->
+    <header id="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-greeting">Olá, Mundo! Eu sou</span>
+                <h1 class="hero-title">Gabriel</h1>
+                <h2 class="hero-subtitle gradient-text">Engenheiro de Dados & IA</h2>
+                <p class="hero-description">
+                    Especialista em transformar dados brutos em ativos estratégicos. Construo pipelines escaláveis e integro sistemas inteligentes.
+                </p>
+                
+                <!-- ÍCONES SOCIAIS (LinkedIn, WhatsApp e GitHub) -->
+                <div class="hero-socials">
+                    <a href="https://www.linkedin.com/in/gabrieldesouzanunes/" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://wa.me/5531973410369?text=Ol%C3%A1%20Gabriel!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" class="whatsapp-btn" title="Conversar no WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>                    
+                    <a href="https://github.com/Gabriel-DEV-0ti" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#projetos" class="btn btn-primary"><i class="fas fa-rocket"></i> Ver Projetos</a>
+                    <a href="#contato" class="btn btn-outline">Fale Comigo</a>
+                </div>
+            </div>
+            
+            <div class="hero-image-container">
+                <div class="hero-image-glow"></div>
+                <div class="hero-image">
+                    <img src="Foto perfil.png" alt="Foto Profissional">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO SOBRE MIM -->
+    <section id="sobre" class="section-bg-darker">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-text">
+                <p>
+                    Sou um <strong>Engenheiro de Dados e Inteligência Artificial</strong> dedicado. Minha jornada começou nas trincheiras de bancos relacionais tradicionais, dominando <strong>SQL, Oracle e SQL Server</strong>.
+                </p>
+                <p>
+                    Hoje, construo a ponte entre a engenharia tradicional e a ciência de dados moderna, garantindo que modelos preditivos e dashboards analíticos sejam alimentados por uma infraestrutura confiável e escalável.
+                </p>
+                <br>
+                <!-- BOTÃO PARA BAIXAR CURRÍCULO -->
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-file-pdf"></i> Baixar Meu Currículo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE PROJETOS -->
+    <section id="projetos">
+        <div class="container">
+            <h2 class="section-title">Projetos em Destaque</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card" onclick="abrirModal('Projeto: Pipeline em Tempo Real')">
+                    <div class="project-img-placeholder"><i class="fas fa-network-wired"></i></div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Spark</span> <span class="tag">Kafka</span>
+                        </div>
+                        <h3 class="project-title">Pipeline de Telemetria</h3>
+                        <p class="project-desc">Arquitetura para processar milhões de eventos diários.</p>
+                        <span class="project-link">Ver Detalhes <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="abrirModal('Projeto: IA para Manutenção')">
+                    <div class="project-img-placeholder"><i class="fas fa-brain"></i></div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag" style="color:#c4b5fd;">Machine Learning</span>
+                        </div>
+                        <h3 class="project-title">IA Preditiva</h3>
+                        <p class="project-desc">Modelos para prever falhas em hardware, reduzindo paradas em 35%.</p>
+                        <span class="project-link">Ver Detalhes <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAJETÓRIA (Experiência e Educação) -->
+    <section id="trajetoria" class="section-bg-darker">
+        <div class="container timeline-container">
+            <div class="timeline-column">
+                <h3><i class="fas fa-briefcase"></i> Experiência Profissional</h3>
+                <div class="timeline">
+                    <div class="timeline-item active">
+                        <span class="timeline-date">Atual</span>
+                        <h4 class="timeline-title">Analista de sistemas</h4>
+                        <p class="timeline-desc">Sustentação de sistemas ERP empresariais críticos e suporte à infraestrutura (ambientes Windows), com atuação direta na resolução de incidentes e operações de banco de dados.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">2022 - 2025</span>
+                        <h4 class="timeline-title">Especialista de Banco de Dados</h4>
+                        <p class="timeline-desc">Manutenção e tuning de consultas em clusters SQL Server e Oracle.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-column">
+                <h3><i class="fas fa-graduation-cap"></i> Educação & Certificações</h3>
+                <div class="timeline">
+                    <div class="timeline-item active">
+                        <span class="timeline-date">Em andamento</span>
+                        <h4 class="timeline-title">Pós-Graduação em Big Data</h4>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Certificações</span>
+                        <h4 class="timeline-title">Licenças Oficiais</h4>
+                        <ul style="color: var(--text-muted); font-size: 0.9rem; padding-left: 1rem;">
+                            <li>Microsoft Certified: Azure Data Fundamentals</li>
+                            <li>Oracle Database SQL Certified</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE PROJETOS -->
+    <div class="modal-overlay" id="modalProjeto">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitulo" style="font-size: 1.5rem; margin: 0;">Título</h3>
+                <button class="modal-close" onclick="fecharModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-btn active" onclick="trocarAba(event, 'aba-modelagem')">Modelagem de Dados</button>
+                <button class="tab-btn" onclick="trocarAba(event, 'aba-docs')">Documentação</button>
+            </div>
+            <div class="modal-body">
+                <div id="aba-modelagem" class="tab-content active">
+                    <h4 style="color: var(--primary-light);">Arquitetura Snowflake</h4>
+                    <p style="color: var(--text-muted); margin-top:1rem;">Detalhes da estrutura desenvolvida para o pipeline...</p>
+                </div>
+                <div id="aba-docs" class="tab-content">
+                    <h4 style="color: var(--primary-light);">Trechos de Código</h4>
+                    <pre style="background: #000; color: #4ade80; padding: 1rem; border-radius: 8px; margin-top:1rem;"><code>df.na.fill(0).write.format("delta").save()</code></pre>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <!-- FCONTATOS (Para Recrutadores) -->
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Contato & Conexão Direta</h2>
+
+            <!-- CARDS DE CONTATO DIRETO (LinkedIn e WhatsApp) -->
+            <div class="contact-channels-grid">
+                <div class="channel-card linkedin">
+                    <div class="channel-icon"><i class="fab fa-linkedin-in"></i></div>
+                    <h3 class="channel-title">LinkedIn</h3>
+                    <p class="channel-desc">Acesse meu perfil profissional, veja recomendações, projetos e acompanhe publicações sobre Engenharia de Dados & IA.</p>
+                    <a href="hhttps://www.linkedin.com/in/gabrieldesouzanunes/" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin">
+                        <i class="fab fa-linkedin-in"></i> Conectar no LinkedIn
+                    </a>
+                </div>
+
+                <div class="channel-card whatsapp">
+                    <div class="channel-icon"><i class="fab fa-whatsapp"></i></div>
+                    <h3 class="channel-title">WhatsApp Direto</h3>
+                    <p class="channel-desc">Canal imediato para propostas, entrevistas e bate-papo técnico sem precisar abrir abas de e-mail.</p>
+                    <a href="https://wa.me/5531973410369?text=Ol%C3%A1%20Gabriel!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        /* ==========================================================================
+           LÓGICA DO MODAL
+        ========================================================================== */
+        const modal = document.getElementById('modalProjeto');
+        const modalTitle = document.getElementById('modalTitulo');
+
+        function abrirModal(titulo) {
+            modalTitle.innerText = titulo;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Evita scroll do fundo
+            // Reseta para a primeira aba
+            document.querySelector('.tab-btn').click(); 
+        }
+
+        function fecharModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fechar ao clicar fora
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) fecharModal();
+        });
+
+        function trocarAba(evento, idAba) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(aba => aba.classList.remove('active'));
+            
+            evento.currentTarget.classList.add('active');
+            document.getElementById(idAba).classList.add('active');
+        }
+
+        /* ==========================================================================
+           LÓGICA DO FORMULÁRIO (SEM ALERT NATIVO)
+           ========================================================================== */
+        const form = document.getElementById('formRecrutador');
+        const btnEnviar = document.getElementById('btnEnviar');
+        const msgSucesso = document.getElementById('msgSucesso');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Previne recarregamento
+            
+            // UI State: Processando
+            const txtOriginal = btnEnviar.innerHTML;
+            btnEnviar.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
+            btnEnviar.disabled = true;
+
+            // Simula envio assíncrono
+            setTimeout(() => {
+                form.reset();
+                btnEnviar.innerHTML = txtOriginal;
+                btnEnviar.disabled = false;
+                
+                // Exibe animação de sucesso
+                msgSucesso.style.display = 'block';
+                setTimeout(() => msgSucesso.style.display = 'none', 5000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
