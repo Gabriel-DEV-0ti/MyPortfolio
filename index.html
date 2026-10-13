@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel | Engenheiro de Dados e IA</title>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style_2.css"> -->
     
     <!-- Fontes do Google: Inter para texto normal e Fira Code para código/tecnologia -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +15,7 @@
     
     <!-- FontAwesome para os ícones (LinkedIn, GitHub, Email, etc.) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
 
 </head>
 <body>
@@ -37,8 +39,10 @@
         <div class="container hero-content">
             <div class="hero-text">
                 <span class="hero-greeting">Olá, Mundo! Eu sou</span>
-                <h1 class="hero-title">Gabriel</h1>
-                <h2 class="hero-subtitle gradient-text">Engenheiro de Dados & IA</h2>
+                <h1 class="hero-title">Gabriel Nunes</h1>
+                <h2 class="hero-subtitle gradient-text">
+                    <span id="typewriter"></span><span class="cursor">|</span>
+                </h2>
                 <p class="hero-description">
                     Especialista em transformar dados brutos em ativos estratégicos. Construo pipelines escaláveis e integro sistemas inteligentes.
                 </p>
@@ -252,29 +256,50 @@
         /* ==========================================================================
            LÓGICA DO FORMULÁRIO (SEM ALERT NATIVO)
            ========================================================================== */
-        const form = document.getElementById('formRecrutador');
-        const btnEnviar = document.getElementById('btnEnviar');
-        const msgSucesso = document.getElementById('msgSucesso');
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Previne recarregamento
+       // Lista focada na sua trajetória técnica
+        const texts = [
+            "Engenheiro de Dados", 
+            "Engenheiro de IA", 
+            "Analista de Sistemas ERP",
+            "Administrador de Banco de Dados"
+        ];
+        
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typeWriter() {
+            const element = document.getElementById("typewriter");
             
-            // UI State: Processando
-            const txtOriginal = btnEnviar.innerHTML;
-            btnEnviar.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
-            btnEnviar.disabled = true;
-
-            // Simula envio assíncrono
-            setTimeout(() => {
-                form.reset();
-                btnEnviar.innerHTML = txtOriginal;
-                btnEnviar.disabled = false;
-                
-                // Exibe animação de sucesso
-                msgSucesso.style.display = 'block';
-                setTimeout(() => msgSucesso.style.display = 'none', 5000);
-            }, 1500);
-        });
+            // Se o elemento não existir, a função para e evita travar a tela
+            if (!element) return; 
+            
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                element.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                element.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typingSpeed = isDeleting ? 30 : 80;
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                typingSpeed = 2000; // Pausa para leitura completa
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typingSpeed = 500; // Pausa antes de escrever a próxima
+            }
+            
+            setTimeout(typeWriter, typingSpeed);
+        }
+        
+        // Inicia diretamente sem depender de eventos de janela
+        setTimeout(typeWriter, 500);
     </script>
 </body>
 </html>

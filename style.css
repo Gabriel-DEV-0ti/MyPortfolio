@@ -1,7 +1,8 @@
+     
         /* ==========================================================================
            VARIÁVEIS DE TEMA (Design System)
            ========================================================================== */
-        :root {
+        *:root {
             /* Paleta Dark Theme */
             --bg-body: #0f172a;        /* Fundo principal escuro */
             --bg-surface: #1e293b;     /* Fundo de painéis e cards */
