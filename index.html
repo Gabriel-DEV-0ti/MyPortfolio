@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel | Engenheiro de Dados e IA</title>
+    <title>Gabriel | Desenvolvedor FullStack</title>
 
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="style_2.css">
@@ -81,12 +81,22 @@
             <h2 class="section-title">Sobre Mim</h2>
             <div class="about-text">
                 <p>
-                    Sou um <strong>Analista de Sistemas ERP</strong> dedicado. combinando anos de experiência em suporte a sistemas corporativos e administração de bancos de dados com uma visão focada no futuro.
+                    Sou um <strong>Analista de Sistemas ERP e Desenvolvedor FullStack</strong> dedicado, combinando anos de experiência em suporte a sistemas corporativos e administração de bancos de dados com uma visão focada no futuro.
                 </p>
                 <p>
-                    Hoje, estou realizando uma pós-graduação em AI Engineering e dedico meus estudos atuais à Engenharia de Dados. Meu objetivo é aplicar minha sólida base de infraestrutura e resolução de problemas na construção de pipelines e arquiteturas de dados eficientes, transformando informações em soluções escaláveis.
+                    Minha trajetória começou na infraestrutura e suporte, o que me deu uma visão privilegiada e profunda de como o software se comporta em produção, redes e arquitetura de servidores. Evoluí para o desenvolvimento e sustentação de software, atuando com linguagens como C# (.NET), Java e Python, além de forte experiência na criação, manutenção e otimização de consultas em bancos de dados relacionais.
+                </p>
+                <p>
+                    Atualmente, atuo na sustentação e melhoria contínua de sistemas empresariais críticos e estou em constante aprimoramento em engenharia de software e IA. Meu foco é atuar no desenvolvimento ponta a ponta (Backend e Frontend), unindo minha capacidade analítica de troubleshooting com a construção de aplicações escaláveis, seguras e eficientes.
                 </p>
                 <br>
+                <p><strong>Principais Tecnologias:</strong></p>
+                <ul style="color: var(--text-muted); margin-bottom: 1.5rem; padding-left: 1.2rem;">
+                    <li>Backend: Java, C# (.NET / ASP.NET), Python.</li>
+                    <li>Frontend: JavaScript, HTML, CSS, Angular.</li>
+                    <li>Bancos de Dados: SQL Server, Oracle, MySQL, Modelagem de Dados.</li>
+                    <li>Outros: Resolução de incidentes, APIs, Integração de Sistemas.</li>
+                </ul>
                 <!-- BOTÃO PARA BAIXAR CURRÍCULO -->
                 <a href="Gabriel de Souza Nunes.pdf" class="btn btn-primary">
                     <i class="fas fa-file-pdf"></i> Meu Currículo
@@ -101,37 +111,59 @@
             <h2 class="section-title">Projetos em Destaque</h2>
             <div class="projects-grid">
                 
-                <div class="project-card" onclick="abrirModal('Projeto: Pipeline em Tempo Real')">
-                    <div class="project-img-placeholder"><i class="fas fa-network-wired"></i></div>
+                <div class="project-card" onclick="abrirModal('apoiarural')">
+                    <div class="project-img-placeholder">
+                        <img src="ApoiaRural.jpg" alt="Captura de tela do ApoiaRural">
+                    </div>
                     <div class="project-info">
                         <div class="project-tags">
-                            <span class="tag">Spark</span> <span class="tag">Kafka</span>
+                            <span class="tag">Java</span> <span class="tag">SpringBoot</span> <span class="tag">React.js</span> <span class="tag">MySQL</span>
                         </div>
-                        <h3 class="project-title">Pipeline de Telemetria</h3>
-                        <p class="project-desc">Arquitetura para processar milhões de eventos diários.</p>
+                        <h3 class="project-title">ApoiaRural</h3>
+                        <p class="project-desc">O ApoiaRural é uma plataforma de rede social criada com o objetivo de transformar o cenário da agricultura familiar.</p>
                         <span class="project-link">Ver Detalhes <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
 
-                <div class="project-card" onclick="abrirModal('Projeto: IA para Manutenção')">
-                    <div class="project-img-placeholder"><i class="fas fa-brain"></i></div>
+                <div class="project-card" onclick="abrirModal('em-desenvolvimento')">
+                    <div class="project-img-placeholder">
+                        <img src="apoiarural.png" alt="Captura de tela do ApoiaRural">
+                    </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <span class="tag" style="color:#c4b5fd;">Machine Learning</span>
                         </div>
-                        <h3 class="project-title">IA Preditiva</h3>
-                        <p class="project-desc">Modelos para prever falhas em hardware, reduzindo paradas em 35%.</p>
+                        <h3 class="project-title">Em Desenvolvimento</h3>
+                        <p class="project-desc">Projeto sendo desenvolvido</p>
                         <span class="project-link">Ver Detalhes <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
 
             </div>
         </div>
+        <div class="modal-overlay" id="modalProjeto">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitulo">Projeto</h3>
+                <button class="modal-close" onclick="fecharModal()" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="modal-tabs">
+                <button class="tab-btn active" onclick="trocarAba(event, 'tabSobre')"><i class="fas fa-circle-info"></i> Sobre o Projeto</button>
+                <button class="tab-btn" onclick="trocarAba(event, 'tabDocs')"><i class="fas fa-book"></i> Documentação</button>
+            </div>
+            <div class="modal-body">
+                <div class="tab-content active" id="tabSobre"></div>
+                <div class="tab-content" id="tabDocs"></div>
+            </div>
+        </div>
+    </div>
     </section>
 
+   
     <!-- TRAJETÓRIA (Experiência e Educação) -->
     <section id="trajetoria" class="section-bg-darker">
         <div class="container timeline-container">
+            <!-- Experiência Profissional -->
             <div class="timeline-column">
                 <h3><i class="fas fa-briefcase"></i> Experiência Profissional</h3>
                 <div class="timeline">
@@ -145,9 +177,17 @@
                         <h4 class="timeline-title">Especialista de Banco de Dados</h4>
                         <p class="timeline-desc">Manutenção e tuning de consultas em clusters SQL Server e Oracle.</p>
                     </div>
+                    <!-- Item Extra Oculto -->
+                    <div class="timeline-item extra-item">
+                        <span class="timeline-date">2020 - 2022</span>
+                        <h4 class="timeline-title">Analista de Suporte Jr.</h4>
+                        <p class="timeline-desc">Suporte técnico nível 1 e 2, manutenção de redes e atendimento ao usuário final.</p>
+                    </div>
                 </div>
+                <button class="btn-see-more" onclick="toggleTimeline(this, 'xp')">Ver mais <i class="fa-solid fa-chevron-down"></i></button>
             </div>
             
+            <!-- Educação & Certificações -->
             <div class="timeline-column">
                 <h3><i class="fas fa-graduation-cap"></i> Educação & Certificações</h3>
                 <div class="timeline">
@@ -163,34 +203,17 @@
                             <li>Oracle Database SQL Certified</li>
                         </ul>
                     </div>
+                    <!-- Item Extra Oculto -->
+                    <div class="timeline-item extra-item">
+                        <span class="timeline-date">Concluído</span>
+                        <h4 class="timeline-title">Tecnólogo em Redes de Computadores</h4>
+                        <h5 class="timeline-subtitle" style="color: var(--text-muted); font-size: 1rem;">Senai</h5>
+                    </div>
                 </div>
+                <button class="btn-see-more" onclick="toggleTimeline(this, 'edu')">Ver mais <i class="fa-solid fa-chevron-down"></i></button>
             </div>
         </div>
     </section>
-
-    <!-- MODAL DE PROJETOS -->
-    <div class="modal-overlay" id="modalProjeto">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modalTitulo" style="font-size: 1.5rem; margin: 0;">Título</h3>
-                <button class="modal-close" onclick="fecharModal()"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="modal-tabs">
-                <button class="tab-btn active" onclick="trocarAba(event, 'aba-modelagem')">Modelagem de Dados</button>
-                <button class="tab-btn" onclick="trocarAba(event, 'aba-docs')">Documentação</button>
-            </div>
-            <div class="modal-body">
-                <div id="aba-modelagem" class="tab-content active">
-                    <h4 style="color: var(--primary-light);">Arquitetura Snowflake</h4>
-                    <p style="color: var(--text-muted); margin-top:1rem;">Detalhes da estrutura desenvolvida para o pipeline...</p>
-                </div>
-                <div id="aba-docs" class="tab-content">
-                    <h4 style="color: var(--primary-light);">Trechos de Código</h4>
-                    <pre style="background: #000; color: #4ade80; padding: 1rem; border-radius: 8px; margin-top:1rem;"><code>df.na.fill(0).write.format("delta").save()</code></pre>
-                </div>
-            </div>
-        </div>
-    </div> 
 
     <!-- FCONTATOS (Para Recrutadores) -->
     <section id="contato">
@@ -222,44 +245,12 @@
 
     <script>
         /* ==========================================================================
-        LÓGICA DO MODAL
-        ========================================================================== */
-        const modal = document.getElementById('modalProjeto');
-        const modalTitle = document.getElementById('modalTitulo');
-
-        function abrirModal(titulo) {
-            modalTitle.innerText = titulo;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Evita scroll do fundo
-            // Reseta para a primeira aba
-            document.querySelector('.tab-btn').click(); 
-        }
-
-        function fecharModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Fechar ao clicar fora
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) fecharModal();
-        });
-
-        function trocarAba(evento, idAba) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(aba => aba.classList.remove('active'));
-            
-            evento.currentTarget.classList.add('active');
-            document.getElementById(idAba).classList.add('active');
-        }
-
-        /* ==========================================================================
         LÓGICA DO FORMULÁRIO (SEM ALERT NATIVO)
            ========================================================================== */
        // Lista focada na sua trajetória técnica
-        const texts = [
+         const texts = [
         "Analista de Sistemas ERP",
-        "Engenheiro de IA",
+        "Desenvolvedor FullStack",
         ];
         
         let textIndex = 0;
@@ -298,6 +289,191 @@
         
         // Inicia diretamente sem depender de eventos de janela
         setTimeout(typeWriter, 500);
+
+        /* ==========================================================================
+   DADOS DOS PROJETOS (edite o conteúdo aqui)
+   ========================================================================== */
+    const projetos = {
+        'apoiarural': {
+            titulo: 'ApoiaRural',
+            sobre: [
+                'O ApoiaRural é uma plataforma de rede social criada para fortalecer a agricultura familiar, conectando pequenos produtores, consumidores e apoiadores.',
+                'A proposta é dar visibilidade aos produtores rurais, facilitar a troca de experiências e aproximar quem produz de quem consome.'
+            ],
+            destaques: [
+                'Perfis de produtores e publicações',
+                'Interação entre usuários (curtidas e comentários)',
+                'API REST em Java com Spring Boot',
+                'Interface em React.js e banco MySQL'
+            ],
+            stack: ['Java', 'SpringBoot', 'React.js', 'MySQL'],
+            github: 'https://github.com/Gabriel-DEV-0ti/ApoiaRural-TCC', 
+            docs: {
+                visao: 'Aplicação dividida em backend (API REST) e frontend (SPA), comunicando-se via JSON.',
+                arquitetura: [
+                    { nome: 'Backend', desc: 'Spring Boot, camadas Controller, Service e Repository' },
+                    { nome: 'Frontend', desc: 'React.js consumindo a API REST' },
+                    { nome: 'Banco de dados', desc: 'MySQL com modelagem relacional' }
+                ],
+                comandos: 'Clone este repositório para a sua máquina:\ngit clone <URL-DO-SEU-REPOSITÓRIO>\nNavegue até a pasta do projeto e, em seguida, para o frontend:\ncd ApoiaRural-Completo/frontend/react-front\nInstale todas as dependências necessárias com o npm: (Este comando irá baixar as bibliotecas que o projeto utiliza)\nnpm install\ndInicie o servidor de desenvolvimento para rodar o projeto:\nnpm run dev\nAcesse a aplicação no seu navegador:\nPronto! O projeto estará rodando em http://localhost:5173.',
+                link: 'https://github.com/Gabriel-DEV-0ti/ApoiaRural-TCC#readme'
+            }
+            },
+            'em-desenvolvimento': {
+                titulo: 'Em densenvolvimento',
+                sobre: [
+                    ''
+                ],
+                destaques: [
+            
+                ],
+                stack: [],
+                github: '',  // vazio = botão desativado
+                docs: null   // null = "documentação em construção"
+            }
+};
+
+/* ==========================================================================
+   LÓGICA DO MODAL
+   ========================================================================== */
+    const modal = document.getElementById('modalProjeto');
+    const modalTitle = document.getElementById('modalTitulo');
+    const tabSobre = document.getElementById('tabSobre');
+    const tabDocs = document.getElementById('tabDocs');
+
+    function montarSobre(p) {
+        const paragrafos = p.sobre.map(t => `<p>${t}</p>`).join('');
+        const destaques = p.destaques.map(d => `<li>${d}</li>`).join('');
+        const tags = p.stack.map(s => `<span class="tag">${s}</span>`).join(' ');
+        const github = p.github
+            ? `<a href="${p.github}" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-github"></i> Ver no GitHub</a>`
+            : `<span class="btn btn-primary disabled"><i class="fab fa-github"></i> Repositório em breve</span>`;
+
+        return `
+            <h4><i class="fas fa-lightbulb"></i> Sobre</h4>
+            ${paragrafos}
+            <h4><i class="fas fa-star"></i> Destaques</h4>
+            <ul>${destaques}</ul>
+            <h4><i class="fas fa-layer-group"></i> Tecnologias</h4>
+            <div class="project-tags">${tags}</div>
+            <div class="modal-actions">${github}</div>`;
+    }
+
+    function montarDocs(p) {
+        if (!p.docs) {
+            return `
+                <div class="empty-state">
+                    <i class="fas fa-screwdriver-wrench"></i>
+                    <p><strong>Documentação em construção</strong></p>
+                    <p>Em breve este projeto terá documentação disponível.</p>
+                </div>`;
+        }
+
+        const d = p.docs;
+        const cards = d.arquitetura
+            .map(a => `<div class="doc-card"><strong>${a.nome}</strong><span>${a.desc}</span></div>`)
+            .join('');
+
+        return `
+            <h4><i class="fas fa-eye"></i> Visão geral</h4>
+            <p>${d.visao}</p>
+            <h4><i class="fas fa-sitemap"></i> Arquitetura</h4>
+            <div class="doc-grid">${cards}</div>
+            <h4><i class="fas fa-terminal"></i> Como executar</h4>
+            <div class="doc-code">${d.comandos}</div>
+            <div class="modal-actions">
+                <a href="${d.link}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    <i class="fas fa-book-open"></i> Documentação completa
+                </a>
+            </div>`;
+    }
+
+    function abrirModal(id) {
+        const p = projetos[id];
+        if (!p) return;
+
+        modalTitle.textContent = p.titulo;
+        tabSobre.innerHTML = montarSobre(p);
+        tabDocs.innerHTML = montarDocs(p);
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        document.querySelector('.tab-btn').click(); // volta para a primeira aba
+    }
+
+    function fecharModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Fechar ao clicar fora do conteúdo
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) fecharModal();
+    });
+
+    // Fechar com a tecla Esc
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') fecharModal();
+    });
+
+    function trocarAba(evento, idAba) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(aba => aba.classList.remove('active'));
+
+        evento.currentTarget.classList.add('active');
+        document.getElementById(idAba).classList.add('active');
+    }
+
+        /* ==========================================================================
+        LÓGICA TOGGLE TIMELINE (VER MAIS / VER MENOS)
+        ========================================================================== */
+        function toggleTimeline(button, section) {
+            const column = button.closest('.timeline-column');
+            const extraItems = column.querySelectorAll('.extra-item');
+            
+            let isExpanded = false;
+            
+            extraItems.forEach(item => {
+                if (item.classList.contains('show')) {
+                    item.classList.remove('show');
+                } else {
+                    item.classList.add('show');
+                    isExpanded = true;
+                }
+            });
+            
+            if (isExpanded) {
+                button.innerHTML = 'Ver menos <i class="fa-solid fa-chevron-up"></i>';
+            } else {
+                button.innerHTML = 'Ver mais <i class="fa-solid fa-chevron-down"></i>';
+            }
+        }
+
+        /* ==========================================================================
+   PLACEHOLDER "EM DESENVOLVIMENTO" PARA CARDS SEM IMAGEM
+   ========================================================================== */
+        function marcarEmDesenvolvimento(container) {
+            container.classList.add('em-desenvolvimento');
+            container.innerHTML = '<i class="fas fa-code"></i><span>Em desenvolvimento</span>';
+        }
+
+        document.querySelectorAll('.project-img-placeholder').forEach(container => {
+            const img = container.querySelector('img');
+
+            // Caso 1: não existe <img> ou o src está vazio
+            if (!img || !img.getAttribute('src')) {
+                marcarEmDesenvolvimento(container);
+                return;
+            }
+
+            // Caso 2: a imagem falhou ao carregar (arquivo não encontrado)
+            img.addEventListener('error', () => marcarEmDesenvolvimento(container));
+
+            // Caso 3: o erro já aconteceu antes do listener ser registrado
+            if (img.complete && img.naturalWidth === 0) {
+                marcarEmDesenvolvimento(container);
+            }
+        });
     </script>
 </body>
 </html>
