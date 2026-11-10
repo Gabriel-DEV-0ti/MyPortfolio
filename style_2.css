@@ -113,7 +113,9 @@
         .gradient-text {
             background: linear-gradient(to right, var(--primary-light), var(--accent));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
+            color: var(--text-main); /* fallback caso o navegador não suporte background-clip */
         }
 
         /* Botões Globais */
@@ -167,6 +169,7 @@
         .cursor {
             font-weight: 300;
             color: var(--text-main); /* Usa o branco/cinza claro da sua paleta */
+            -webkit-text-fill-color: var(--text-main);
             animation: blink 0.8s infinite;
             margin-left: 4px;
         }
@@ -1003,7 +1006,23 @@
 
         @media (max-width: 768px) {
             .hero-title { font-size: 3rem; }
+            .hero-subtitle {
+                font-size: 1.5rem;   /* menor, para quebrar menos linhas */
+                min-height: 3.2em;   /* reserva espaço e evita o layout "pular" enquanto digita */
+            }
             .nav-links { display: none; }
             .form-row { grid-template-columns: 1fr; }
             .modal-body { padding: 1.25rem; }
+        }
+
+        /* Desktop: a altura acompanha a largura, então a imagem aparece inteira */
+        @media (min-width: 769px) {
+            .project-img-placeholder {
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+
+            .project-img-placeholder img {
+                object-position: center;
+            }
         }
