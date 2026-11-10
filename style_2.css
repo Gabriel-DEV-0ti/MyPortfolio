@@ -111,11 +111,10 @@
         }
 
         .gradient-text {
-            background: linear-gradient(to right, var(--primary-light), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: var(--text-main); /* fallback caso o navegador não suporte background-clip */
+            background: none;
+            -webkit-text-fill-color: #FFFFFF;
+            color: #FFFFFF;
+            text-shadow: 0 0 18px rgba(244, 245, 247, 0.35);
         }
 
         /* Botões Globais */
@@ -168,8 +167,8 @@
         ========================================================================== */
         .cursor {
             font-weight: 300;
-            color: var(--text-main); /* Usa o branco/cinza claro da sua paleta */
-            -webkit-text-fill-color: var(--text-main);
+            color: #FFFFFF;
+            -webkit-text-fill-color: #FFFFFF;
             animation: blink 0.8s infinite;
             margin-left: 4px;
         }
